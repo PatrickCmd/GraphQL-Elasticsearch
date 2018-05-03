@@ -23,8 +23,25 @@ class CreateIndividual(graphene.Mutation):
         return CreateIndividual(individual=individual)
 
 
+class DeleteIndividual(graphene.Mutation):
+    
+    class Arguments:
+        individual_id = graphene.Int(required=True)
+    individual = graphene.Field(IndividualObject)
+
+    def mutate(self, info, individual_id):
+        query_individuals = IndividualObject.get_query(info)
+        print(query_individuals)
+        individual = query_individuals.filter(
+            Individual.id == individual_id).first()
+        individual.delete()
+
+        return DeleteIndividual(individual=individual)
+
+
 class Mutation(graphene.ObjectType):
     create_individual = CreateIndividual.Field()
+    delete_individual = DeleteIndividual.Field()
 
 
 class Query(graphene.ObjectType):
