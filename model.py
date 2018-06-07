@@ -52,6 +52,13 @@ class UtilityMethods:
     def save(self):
         db_session.add(self)
         db_session.commit()
+    
+    def update(self):
+        db_session.commit()
+    
+    def delete(self):
+        db_session.delete(self)
+        db_session.commit()
 
 
 class Individual(SearchableMixin, Base, UtilityMethods):

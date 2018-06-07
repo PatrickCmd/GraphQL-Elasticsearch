@@ -1,4 +1,5 @@
-# GraphQL and Elasticsearch (Implementing simple CRUD and Search Operations using GraphQL and Elasticsearch)
+# GraphQL and Elasticsearch 
+Implementing simple CRUD and Search Operations using GraphQL and Elasticsearch
 
 ## Installing Elasticsearch service(MacOS)
 ```
