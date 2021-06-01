@@ -1,5 +1,5 @@
 elasticsearch==6.2.0
-urllib3==1.22
+urllib3==1.26.5
 Flask==1.0.1
 Flask-GraphQL==1.4.1
 graphene==2.1
